@@ -109,6 +109,7 @@ class CallFlow(object):
         loop.run_until_complete(self.start_serve())
 
     async def start_serve(self):
+        await logger.init()
         if len(self.before_start_hooks) > 0:
             for hook in self.before_start_hooks:
                 await hook()
@@ -466,7 +467,7 @@ class CallFlow(object):
             rv = await func(request, response, exc)
 
     async def __call__(self, scope, receive, send):
-        scope['app'] = self
+        # scope['app'] = self
         req = Request(scope, receive)
         error = None
         try:

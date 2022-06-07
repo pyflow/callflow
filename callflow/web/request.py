@@ -112,7 +112,7 @@ class Request(object):
     #: happened when matching, this will be `None`.
     view_args = None
 
-    def __init__(self, scope, receive=empty_receive, send=empty_send, populate_request=True):
+    def __init__(self, scope, receive=empty_receive, send=empty_send, populate_request=False):
         self.scope = scope
         self._receive = receive
         self._send = send

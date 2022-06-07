@@ -669,7 +669,6 @@ class RequestResponseCycle:
                     get_path_with_query_string(self.scope),
                     self.scope["http_version"],
                     status_code,
-                    status_code=status_code,
                     scope=self.scope
                 )
 
